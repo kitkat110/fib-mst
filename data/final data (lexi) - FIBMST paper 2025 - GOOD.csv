@@ -1,0 +1,199 @@
+Date,Distance from Mouth of Creek (m),Creek,Two Letter Code,Coliform count (avg cfu or mpn/100mL),Coliform count (st dev),E. coli count (avg cfu or mpn/100mL),E. coli count (st dev),Date of qPCR,# of HF183 amplifications (out of 4),HF183 CQ mean,HF183 SQ mean (copy/100 mL),# of DogBac amplifications (out of 4),DogBac CQ mean,DogBac SQ mean (copy/100 mL),(+) Control (Amplify Y/N?),"(-) Control HF-183 (Amplify Y/N?) If Yes, how many?",(-) Control DogBac (Amplify Y/N?),Days since last rain,Flow (Hydrograph) (cfs),"Stage 
+(Hydrograph) (ft)",Notes,Links,
+6/22/2021,100,Blunn,LSD,950,178,350,173,7/12/2021,0,0,0,0,0,0,Y,0,0,,,,,,
+6/22/2021,230,Blunn,LSU,1550,196,467,76,7/12/2021,0,0,0,0,0,0,Y,0,0,,,,,https://drive.google.com/drive/folders/1sp3zxooQUUiCoSpiQ6EcEunsw90eOl2T?usp=drive_link ,
+6/22/2021,2050,Blunn,NPD,1775,473,774,266,7/12/2021,0,0,0,0,0,0,Y,0,0,,,,,https://drive.google.com/drive/folders/1sp3zxooQUUiCoSpiQ6EcEunsw90eOl2T?usp=drive_link ,
+6/22/2021,2340,Blunn,NPU,2225,287,488,103,7/12/2021,0,0,0,0,0,0,Y,0,0,,,,,https://drive.google.com/drive/folders/1sp3zxooQUUiCoSpiQ6EcEunsw90eOl2T?usp=drive_link ,
+11/8/2022,1430,Blunn,BG,9678.4,,6212.4,,11/17/2022,4,27.7725,7047947.25,0,,,Y,N (only 1 neg well was performed) ,,,,,,11/8/2022 Blunn Creek,
+11/8/2022,2050,Blunn,NPD,4813.2,,103.6,,11/17/2022,0,,,0,,,Y,N,,,,,,11-17-2022 MST Multiplex Lady Bird and Blunn Data file -  Quantification Cq Results.xlsx,
+11/8/2022,2340,Blunn,NPU,3265.6,,122,,11/17/2022,1,,,0,,,Y,N,,,,,,11/8/2022 Blunn Creek,
+1/28/2025,419,Blunn,AA,3080.4,,74,,2/3/2025,0,,,0,,,Y,N,N,,1,1,,"1-16-2025 Boggy & Tannehill, 1-28-2025 Blunn UE FIB MST qPCR Plate Re-Run 2-3-2025 -  Quantification Cq Results.xlsx",1/28/2025 Blunn Creek IDEXX Counts
+1/28/2025,1390,Blunn,AW,3080.4,,249.6,,2/3/2025,0,,,0,,,Y,N,N,,1,1,,"1-16-2025 Boggy & Tannehill, 1-28-2025 Blunn UE FIB MST qPCR Plate Re-Run 2-3-2025 -  Quantification Cq Results.xlsx",1/28/2025 Blunn Creek IDEXX Counts
+1/28/2025,1430,Blunn,BG,3921.6,,774,,2/3/2025,0,,,0,,,Y,N,N,,1,1,,"1-16-2025 Boggy & Tannehill, 1-28-2025 Blunn UE FIB MST qPCR Plate Re-Run 2-3-2025 -  Quantification Cq Results.xlsx",1/28/2025 Blunn Creek IDEXX Counts
+1/28/2025,230,Blunn,LS,9678.4,,323.6,,2/3/2025,0,,,2,,,Y,N,N,,1,1,,"1-16-2025 Boggy & Tannehill, 1-28-2025 Blunn UE FIB MST qPCR Plate Re-Run 2-3-2025 -  Quantification Cq Results.xlsx",1/28/2025 Blunn Creek IDEXX Counts
+2/4/2025,419,Blunn,AA,3481.6,,107.6,,2/5/2025,0,,,0,,,Y,N,N,,,,,2-4-2025 UE FIB MST Blunn Creek qPCR Plate Run 2-5-2025 -  Quantification Cq Results.xlsx,
+2/4/2025,1390,Blunn,AW,856.4,,233.2,,2/5/2025,0,,,0,,,Y,N,N,,,,,2-4-2025 UE FIB MST Blunn Creek qPCR Plate Run 2-5-2025 -  Quantification Cq Results.xlsx,
+2/4/2025,1430,Blunn,BG,9678.4,,541.6,,2/5/2025,4,34.51,11045438.75,0,,,Y,N,N,,,,,2-4-2025 UE FIB MST Blunn Creek qPCR Plate Run 2-5-2025 -  Quantification Cq Results.xlsx,
+2/4/2025,230,Blunn,LS,3465.6,,102.4,,2/5/2025,0,,,4,32.0925,10129567.75,Y,N,N,,,,,2-4-2025 UE FIB MST Blunn Creek qPCR Plate Run 2-5-2025 -  Quantification Cq Results.xlsx,
+2/4/2025,2340,Blunn,NP,9678.4,,278.8,,2/5/2025,0,,,0,,,Y,N,N,,,,,2-4-2025 UE FIB MST Blunn Creek qPCR Plate Run 2-5-2025 -  Quantification Cq Results.xlsx,
+3/4/2022,853,Boggy,DW,3683.2,,16.4,,4/29/2022,0,0,0,0,0,0,Y,N,N,,,,,Copy of UE 4-29-2022 (3-4-2022 Rerun) (4-18-2022 Run) Multiplex HF183 DogBac Data -  Quantification Cq Results.xlsx,
+3/4/2022,8960,Boggy,MR,5654.4,,615.6,,4/29/2022,3,N/A,N/A,0,0,0,Y,N,N,,,,Only two Cq values are valid,Copy of UE 4-29-2022 (3-4-2022 Rerun) (4-18-2022 Run) Multiplex HF183 DogBac Data -  Quantification Cq Results.xlsx,
+3/4/2022,2680,Boggy,SC,9678.4,,25.2,,4/29/2022,0,0,0,0,0,0,Y,N,N,,,,,Copy of UE 4-29-2022 (3-4-2022 Rerun) (4-18-2022 Run) Multiplex HF183 DogBac Data -  Quantification Cq Results.xlsx,
+3/4/2022,7440,Boggy,ST,2908,,665.6,,4/29/2022,4,31.02333333,6358921.332,0,0,0,Y,N,N,,,,,Copy of UE 4-29-2022 (3-4-2022 Rerun) (4-18-2022 Run) Multiplex HF183 DogBac Data -  Quantification Cq Results.xlsx,
+3/4/2022,6620,Boggy,WW,3022.4,,688.8,,4/29/2022,3,31.45,6488122.668,0,0,0,Y,N,N,,,,,Copy of UE 4-29-2022 (3-4-2022 Rerun) (4-18-2022 Run) Multiplex HF183 DogBac Data -  Quantification Cq Results.xlsx,
+6/10/2022,853,Boggy,DW,,,75,,7/11/2022,0,0,0,0,0,0,Y,N,N,,,,4th run of the samples,6/11/2022 Petrifilm Counts  Boggy Creek,
+6/10/2022,8960,Boggy,MR,,,775,,7/11/2022,3,N/A,N/A,0,0,0,Y,N,N,,,,4th run of the samples ,6/11/2022 Petrifilm Counts  Boggy Creek,
+6/10/2022,6398,Boggy,NW,,,150,,7/11/2022,3,N/A,N/A,0,,,Y,N,N,,,,4th run of the samples | No Cq values are valid,6/11/2022 Petrifilm Counts  Boggy Creek,
+6/10/2022,7440,Boggy,ST,,,125,,7/11/2022,0,,,0,0,0,Y,N,N,,,,4th run of the samples,6/11/2022 Petrifilm Counts  Boggy Creek,
+6/10/2022,10160,Boggy,TC,,,775,,7/11/2022,1,,,0,,,Y,N,N,,,,4th run of the samples,6/11/2022 Petrifilm Counts  Boggy Creek,
+6/10/2022,9620,Boggy,WW,,,,,,4,32.7325,7639648,,,,,,,,,,,,
+1/16/2025,853,Boggy,DW,0,,0,,2/12/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+1/16/2025,8960,Boggy,MB,3022.4,,396,,2/12/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+1/16/2025,8960,Boggy,MB,3022.4,,396,,2/3/2025,0,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,6398,Boggy,NW,3683.2,,149.2,,2/3/2025,1,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,6398,Boggy,NW,3683.2,,149.2,,2/12/2025,1,0,0,0,0,0,Y,N,N,,,,,,
+1/16/2025,2680,Boggy,SC,5654.4,,63.2,,2/12/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+1/16/2025,2680,Boggy,SC 2,660,,38.8,,2/3/2025,,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,7440,Boggy,ST,2908,,142,,2/3/2025,0,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,7440,Boggy,ST,2908,,142,,2/12/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+1/16/2025,10160,Boggy,TC,952.8,,503.6,,2/3/2025,0,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,10160,Boggy,TC,952.8,,503.6,,2/12/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+1/16/2025,6620,Boggy,WW,5198.8,,452,,2/3/2025,0,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,6620,Boggy,WW,5198.8,,452,,2/12/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+3/6/2025,853,Boggy,DW,1844.4,,8,,3/28/2025,4,33.9675,8308444.75,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Boggy Creek
+3/4/2022,10160,Boggy,TC,9678.4,,626,,4/29/2022,4,29.63,5934439,0,0,0,Y,N,N,,,,,Copy of UE 4-29-2022 (3-4-2022 Rerun) (4-18-2022 Run) Multiplex HF183 DogBac Data -  Quantification Cq Results.xlsx,
+3/6/2025,8960,Boggy ,MB,4044.8,,714,,3/28/2025,3,35.99,8959083,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Boggy Creek
+3/6/2025,6398,Boggy ,NW,9678.4,,611.6,,3/28/2025,4,34.52,8486184,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Boggy Creek
+3/6/2025,2680,Boggy ,SC,6931.6,,458,,3/28/2025,4,33.7925,8252147.25,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Boggy Creek
+3/6/2025,7440,Boggy ,ST,9678.4,,442.4,,3/28/2025,3,34.61,8515137,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Boggy Creek
+3/6/2025,10160,Boggy ,TC,9678.4,,5654.4,,3/28/2025,1,0,0,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Boggy Creek
+3/6/2025,6620,Boggy ,WW,9678.4,,805.6,,3/28/2025,4,33.1825,8055910.25,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Boggy Creek
+6/9/2022,13080,Bull,BM,9678.4,,20.8,,7/11/2022,0,0,0,0,0,0,Y,N,N,,,,,6/9/2022 Bull Creek FHS/Quiagen IDEXX Tray ,7/11/2022 Boggy Bull rerun #4
+6/9/2022,3910,Bull,LD1,9678.4,,73.2,,7/11/2022,0,0,0,1,39.72,1.29627,Y,N,N,,,,,6/9/2022 Bull Creek FHS/Quiagen IDEXX Tray ,7/11/2022 Boggy Bull rerun #4
+6/9/2022,4180,Bull,LU,9678.4,,44,,7/11/2022,0,0,0,2,31,202.80954,Y,N,N,,,,,6/9/2022 Bull Creek FHS/Quiagen IDEXX Tray ,7/11/2022 Boggy Bull rerun #4
+6/9/2022,11570,Bull,SD,9678.4,,4,,7/11/2022,0,0,0,3,30.12,341.56023,Y,N,N,,,,,6/9/2022 Bull Creek FHS/Quiagen IDEXX Tray ,7/11/2022 Boggy Bull rerun #4
+6/9/2022,5060,Bull,WR,9678.4,,43.2,,7/11/2022,0,0,0,0,0,0,Y,N,N,,,,,6/9/2022 Bull Creek FHS/Quiagen IDEXX Tray ,7/11/2022 Boggy Bull rerun #4
+6/9/2022,13080,Bull,WW,,,,,7/12/2022,4,32.7325,7639648,0,0,0,Y,N,N,,,,,,
+9/20/2022,13080,Bull,BM,3842.4,,8,,9/22/2022,0,,,0,,,Y,N,N,,,,,9/20/2022 Bull Creek IDEXX Counts,9-22-2022 UE Bull Creek samples from 9-20-22 Multiplex qPCR Data -  Quantification Cq Results.xlsx
+9/20/2022,3910,Bull,LD,9678.4,,25.2,,9/22/2022,0,,,0,,,Y,N,N,,,,,9/20/2022 Bull Creek IDEXX Counts,9-22-2022 UE Bull Creek samples from 9-20-22 Multiplex qPCR Data -  Quantification Cq Results.xlsx
+9/20/2022,4180,Bull,LU,960.6,,20.8,,9/22/2022,0,,,0,,,Y,N,N,,,,,9/20/2022 Bull Creek IDEXX Counts,9-22-2022 UE Bull Creek samples from 9-20-22 Multiplex qPCR Data -  Quantification Cq Results.xlsx
+9/20/2022,11570,Bull,SD,2004.8,,12,,9/22/2022,0,,,0,,,Y,N,N,,,,,9/20/2022 Bull Creek IDEXX Counts,9-22-2022 UE Bull Creek samples from 9-20-22 Multiplex qPCR Data -  Quantification Cq Results.xlsx
+9/20/2022,5060,Bull,WR,4044.8,,79.6,,9/22/2022,0,,,0,,,Y,N,N,,,,,9/20/2022 Bull Creek IDEXX Counts,9-22-2022 UE Bull Creek samples from 9-20-22 Multiplex qPCR Data -  Quantification Cq Results.xlsx
+10/31/2025,13080,Bull,BM,2068.8,,48.4,,1/16/2026,1,0,0,0,0,0,Y,N,N,,,,Fall 2025 MST Lab Notebook ,10/31/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+10/31/2025,13080,Bull,BM,2068.8,,48.4,,1/16/2026,1,36.79,0,0,0,0,Y,N,N,,,,hydromet ^,10/31/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+10/31/2025,3910,Bull,LD,2746.8,,88.4,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,,
+10/31/2025,3760,Bull,LT,2299.2,,120.4,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,10/31/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+10/31/2025,11570,Bull,SD,1140.4,,12.4,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,,
+10/31/2025,12740,Bull,SU,740,,29.2,,1/16/2026,1,36.58,0,0,0,0,Y,N,N,,,,ran qpcr for these dates twice,10/31/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+10/31/2025,6970,Bull,,1664,,96.4,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,10/31/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+10/31/2025,5060,Bull,WR,842,,73.2,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,,
+11/4/2025,13080,Bull,BM,4184.8,,52.8,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,11/4/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+11/4/2025,3910,Bull,LD,9678.4,,62.4,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,11/4/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+11/4/2025,3760,Bull,LT,5654.4,,147.6,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,11/4/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+11/4/2025,11570,Bull,SD,3655.6,,108.8,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,11/4/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+11/4/2025,12740,Bull,SU,2908,,20.8,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,11/4/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+11/4/2025,6970,Bull,SW,3842.8,,25.2,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,11/4/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+11/4/2025,5060,Bull,WR,3655.6,,79.6,,1/16/2026,0,0,0,0,0,0,Y,N,N,,,,,11/4/2025 Bull Creek IDEXX Counts,10-31-25 and 11-4-25 UE FIB MST Bull Creek qPCR Run 1-16-26 -  Quantification Cq Results.xlsx
+10/22/2023,47530,Onion,HS,,,29.6,,10/26/2023,0,0,0,0,,,Y,N,N,,,,,10/22/2023 Onion Creek,
+10/22/2023,20630,Onion,LF,,,16.4,,10/26/2023,0,0,0,1,29.11,,Y,N,N,,,,,10/22/2023 Onion Creek,
+10/22/2023,26440,Onion,OC,,,179.2,,10/26/2023,0,0,0,0,,,Y,N,N,,,,,10/22/2023 Onion Creek,
+10/22/2023,39010,Onion,OS,,,4,,10/26/2023,0,0,0,0,,,Y,N,N,,,,,10/22/2023 Onion Creek,
+10/22/2023,15320,Onion,RM,,,20.8,,10/26/2023,0,0,0,0,,,Y,N,N,,,,No data points but seems to be good data!,10/22/2023 Onion Creek,
+3/7/2025,8060,Onion,BA,1379.2,,74.8,,3/10/2025,0,0,0,4,33.14,8627648,Y,N,N,,,,,3-7-2025 Onion Creek UE FIB MST qPCR Run 4-9-2025 -  Quantification Cq Results.xlsx,
+3/7/2025,47530,Onion,HS,1461.6,,8,,3/10/2025,0,0,0,0,0,,Y,N,N,,,,,3-7-2025 Onion Creek UE FIB MST qPCR Run 4-9-2025 -  Quantification Cq Results.xlsx,
+3/7/2025,20630,Onion,LF,1740.8,,101.2,,3/10/2025,0,0,0,0,0,,Y,N,N,,,,,3-7-2025 Onion Creek UE FIB MST qPCR Run 4-9-2025 -  Quantification Cq Results.xlsx,
+3/7/2025,26440,Onion,OC,3080.4,,53.6,,3/10/2025,0,0,0,0,0,,Y,N,N,,,,,3-7-2025 Onion Creek UE FIB MST qPCR Run 4-9-2025 -  Quantification Cq Results.xlsx,
+3/7/2025,39010,Onion,OS,3683.2,,8,,3/10/2025,0,0,0,0,0,,Y,N,N,,,,,3-7-2025 Onion Creek UE FIB MST qPCR Run 4-9-2025 -  Quantification Cq Results.xlsx,
+3/7/2025,15320,Onion,RM,1844.4,,29.6,,3/10/2025,0,0,0,0,0,,Y,N,N,,,,,3-7-2025 Onion Creek UE FIB MST qPCR Run 4-9-2025 -  Quantification Cq Results.xlsx,
+6/20/2023,334,Shoal,FD,9678.4,,6931.6,,6/29/2023,1/4,0,0,0,,,Y,N,N,,,,default VIC R^2 = 0.451,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,363,Shoal,FO,2134,,2201.6,,6/29/2023,2,0,0,1,,,Y,N,2/4,,,,not all positive standards amplified upon adjusting baseline ,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,391,Shoal,FU,9678.4,,461.2,,6/29/2023,0,,,0,,,Y,N,N,,,,,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,6910,Shoal,GH-1,1749.6,,183.6,,6/29/2023,0,,,0,,,Y,N,N,,,,,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,6910,Shoal,GH-2,9678.4,,104.8,,6/29/2023,0,,,0,,,Y,N,N,,,,,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,9470,Shoal,NA,4044.8,,57.2,,6/29/2023,0,,,0,,,Y,N,N,,,,,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,1190,Shoal,NS,9678.4,,192.8,,6/29/2023,0,,,0,,,Y,N,N,,,,,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,5590,Shoal,SG,9678.4,,211.6,,6/29/2023,0,,,0,,,Y,N,N,,,,,6/20/23 Shoal Creek IDEXX Counts,
+6/20/2023,3220,Shoal,TF,9678.4,,77.2,,6/29/2023,0,,,0,,,Y,N,N,,,,,6/20/23 Shoal Creek IDEXX Counts,
+2/7/2025,334,Shoal,FD,9678.4,,2068.8,,2/19/2025,4,24.595,7716344.5,4,26.3725,8686578.5,Y,N,N,,,,,Sophomore Plate,2/7/2025 Shoal Creek IDEXX Counts 
+2/7/2025,363,Shoal,FU,7945.2,,219.2,,2/19/2025,4,32.15666667,10915685.67,4,34.56666667,12280540,Y,N,N,,,,,Sophomore Plate,2/7/2025 Shoal Creek IDEXX Counts 
+2/7/2025,6910,Shoal,GH,6212.4,,34.4,,2/19/2025,0,,,0,,,Y,N,N,,,,,Sophomore Plate,2/7/2025 Shoal Creek IDEXX Counts 
+2/7/2025,9470,Shoal,NA,9678.4,,384,,2/19/2025,1,,,3,35.86,12847796,Y,N,N,,,,DogBac Cq values not valid,Sophomore Plate,2/7/2025 Shoal Creek IDEXX Counts 
+2/7/2025,1190,Shoal,NS,7945.2,,73.2,,2/19/2025,0,,,0,,,Y,N,N,,,,,Sophomore Plate,2/7/2025 Shoal Creek IDEXX Counts 
+2/7/2025,5590,Shoal,SG,3318.8,,53.6,,2/19/2025,0,,,0,,,Y,N,N,,,,,Sophomore Plate,2/7/2025 Shoal Creek IDEXX Counts 
+2/7/2025,3220,Shoal,TF,3318.8,,92.4,,2/19/2025,4,33.7825,1915189,0,,,Y,N,N,,,,,Sophomore Plate,2/7/2025 Shoal Creek IDEXX Counts 
+2/27/2025,334,Shoal,FD,9678.4,,344.8,,2/28/2025,4,27.9525,10306870.75,2,,,Y,N,N,,,,DogBac Cq values not valid,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+2/27/2025,363,Shoal,FO,No data ,,No data ie not collected,,No Data ie not sampled,,,No Data ie not sampled,,,No Data ie not sampled,,No Data ie not sampled,,No Data ie not sampled,,No Data ie not sampled,,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+2/27/2025,391,Shoal,FU,9678.4,,252.4,,2/28/2025,4,32.515,12470864.5,4,,,Y,N,N,,,,,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+2/27/2025,6910,Shoal,GH,1664,,53.6,,2/28/2025,0,,,0,,,Y,N,N,,,,,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+2/27/2025,9470,Shoal,NA,7945.2,,31780.8,,2/28/2025,2,0,0,0,,,Y,N,N,,,,Cq values not valid,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+2/27/2025,1190,Shoal,NS,3265.6,,34,,2/28/2025,1,,,0,,,Y,N,N,,,,,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+2/27/2025,5590,Shoal,SG,2757.2,,108.8,,2/28/2025,0,,,0,,,Y,N,N,,,,,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+2/27/2025,3220,Shoal,TF,4479.6,,64.4,,2/28/2025,4,33.6175,12993780.25,4,,,Y,N,N,,,,,2-27-2025 UE FIB MST Shoal Creek qPCR run 2-28-2025 -  Quantification Cq Results.xlsx,2/27/2025 Shoal Creek IDEXX Counts 
+1/16/2025,4087,Tannehill,EF,1461.6,,63.2,,2/3/2025,0,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,1818,Tannehill,GP,6931.6,,278.8,,2/3/2025,0,0,0,3,0,0,Y,N,N,,,,Cq values for DogBac not valid ,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,146,Tannehill,JL,5654.4,,273.2,,2/3/2025,0,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,5342,Tannehill,LC,5198.8,,458,,2/3/2025,0,0,0,1,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+1/16/2025,820,Tannehill,PL,4184.8,,111.6,,2/3/2025,0,0,0,0,0,0,Y,N,N,,,,,1-16-2025 UE FIB MST Tannehill & Boggy Creek qPCR Plate Re-Run 2-12-2025 -  Quantification Cq Results.xlsx,
+3/6/2025,4087,Tannehill,EF,3655.6,,503.6,,3/28/2025,1,,,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Tannehill & Boggy Creek IDEXX Counts
+3/6/2025,1818,Tannehill,GP,9678.4,,276.4,,3/28/2025,4,31.4775,7507411.75,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Tannehill & Boggy Creek IDEXX Counts
+3/6/2025,146,Tannehill,JL,9678.4,,458,,3/28/2025,4,31.6675,7568534.75,0,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Tannehill & Boggy Creek IDEXX Counts
+3/6/2025,5342,Tannehill,LC,9678.4,,3265.6,,3/28/2025,2,0,0,4,33.5175,8151814.75,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,Cq values for HF-183 not valid,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Tannehill & Boggy Creek IDEXX Counts
+3/6/2025,820,Tannehill,PL,6212.4,,293.2,,3/28/2025,4,33.38,8119446,1,,,Y,1/4 but Stuart said it's fine,1/4 but Stuart said it's fine,,,,,3-6-2025 UE FIB MST Boggy & Tannehill Creek qPCR Run 3-28-2025 -  Quantification Cq Results.xlsx,3/6/2025 Tannehill & Boggy Creek IDEXX Counts
+7/23/2021,2880,Waller,CF,,,400,100,7/28/2021,4,34.3625,7981742.5,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/23/2021,3894,Waller,CS,,,"2,033",231,7/28/2021,3,34.86,8142236,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/23/2021,6437,Waller,DU,,,300,163,7/28/2021,4,34.74,8103524,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/23/2021,8440,Waller,FF,,,"1,925",359,7/28/2021,4,32.0675,7241375.5,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/23/2021,5664,Waller,HGN,,,"1,275",287,7/28/2021,4,33.1625,7594622.5,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/23/2021,5310,Waller,HGS,,,725,457,7/28/2021,4,31.195,6959907,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/23/2021,3765,Waller,SB,,,967,289,7/28/2021,4,34.41,7997066,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/23/2021,4358,Waller,TJ,,,500,173,7/28/2021,4,31.52,7064752,N/A,N/A,N/A,Y,N,N/A,,,,,7/23/21 Waller Creek,(done) 7/28/2021 Waller Creek Reruns
+7/7/2022,3765,Waller,2017,,,0,0,7/11/2022,3/4,34.68,8367032,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+7/7/2022,2880,Waller,CF,,,238,180,7/11/2022,0,0,,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+7/7/2022,3894,Waller,CS,,,938,330,7/11/2022,0,,,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+7/7/2022,3846,Waller,ER,,,1550,332,7/11/2022,2/4,0,,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+7/7/2022,5664,Waller,HGN,,,800,294,7/11/2022,4/4,33.5,7963000,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+7/7/2022,5310,Waller,HGS,,,1450,551,7/11/2022,4/4,31.97,7439128,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+7/7/2022,2172,Waller,MS,,,550,208,7/11/2022,4/4,37.3,9264120,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+7/7/2022,1475,Waller,TS,,,175,96,7/11/2022,0,0,,0/4,0,,Y,N,N,,,,,7/8/2022 Waller Creek Sites ,7-11-2022
+4/3/2025,3379,Waller,AC,4044.8,1376.4,1376.4,,4/7/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+4/3/2025,3379,Waller,AC,4044.8,1376.4,1376.4,,4/16/2025,2/4,,,0,0,0,Y,N,N,,,,Cq values not valid,,
+4/3/2025,2880,Waller,CF-S,9678.4,1379.2,1379.2,,4/7/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+4/3/2025,2880,Waller,CF-S,9678.4,1379.2,1379.2,,4/16/2025,,,,0,0,0,Y,N,N,,,,,,
+4/3/2025,4200,Waller,EP,9678.4,9678.4,9678.4,,4/7/2025,4/4,0,0,0,0,0,Y,N,N,,,,Cq values not viable,,
+4/3/2025,4200,Waller,EP,9678.4,9678.4,9678.4,,4/16/2025,4,33.9175,9034289,0,0,0,Y,N,N,,,,,,
+4/3/2025,8440,Waller,FF,9678.4,1267.6,1267.6,,4/7/2025,4,34.7825,9664952.5,0,0,0,Y,N,N,,,,,,
+4/3/2025,8440,Waller,FF,9678.4,1267.6,1267.6,,4/16/2025,4,34.9825,9403631,0,0,0,Y,N,N,,,,,,
+4/3/2025,5310,Waller,HG-S,9678.4,525.6,525.6,,4/7/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+4/3/2025,5310,Waller,HG-S,9678.4,525.6,525.6,,4/16/2025,,,,0,0,0,Y,N,N,,,,,,
+4/3/2025,2172,Waller,MS,6931.6,208,208,,4/7/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+4/3/2025,2172,Waller,MS,6931.6,208,208,,4/16/2025,3/4,35.92,9728756,0,0,0,Y,N,N,,,,,,
+4/3/2025,1083,Waller,SS,9678.4,9678.4,9678.4,,4/7/2025,4,24.075,5842375,0,0,0,Y,N,N,,,,,,
+4/3/2025,1083,Waller,SS,9678.4,9678.4,9678.4,,4/16/2025,4,24.16,5650388,0,0,0,Y,N,N,,,,,,
+4/3/2025,9019,Waller,SV,9678.4,1089.2,1089.2,,4/7/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+4/3/2025,9019,Waller,SV,9678.4,1089.2,1089.2,,4/16/2025,,,,0,0,0,Y,N,N,,,,,,
+4/3/2025,4358,Waller,TJ,9678.4,714,714,,4/7/2025,0,0,0,0,0,0,Y,N,N,,,,,,
+4/3/2025,4358,Waller,TJ,9678.4,714,714,,4/16/2025,,,,0,0,0,Y,N,N,,,,,,
+4/3/2025,1475,Waller,TS,6212.4,440,440,,4/7/2025,,0,0,0,0,0,Y,N,N,,,,,,
+4/3/2025,1475,Waller,TS,6212.4,440,440,,4/16/2025,,,,0,0,0,Y,N,N,,,,,,
+6/22/2017,,Waller ,AC,,,1200,,,3/3,33.34,,,,,Y,N,,,,,,,
+6/22/2017,,Waller ,CF,,,650,,,3/3,34.01,,,,,Y,N,,,,,,,
+6/22/2017,,Waller ,CS,,,625,,,3/3,36.38,,,,,Y,N,,,,,,,
+6/22/2017,,Waller ,MS,,,650,,,,,,,,,,,,,,,,,
+6/22/2017,,Waller ,SB,,,266.7,,,0/3,0,,,,,Y,N,,,,,,,
+6/22/2017,,Waller ,TJ,,,350,,,3/3,34.21,,,,,Y,N,,,,,,,
+8/21/2017,,Waller ,HG-A (HGS),,,850,,,2/3,37.5,,,,,Y,N,,,,,,,
+8/21/2017,,Waller ,HG-B (HGS),,,267,,,,,,,,,,,,,,,,,
+9/19/2017,,Waller ,CF,,,125,,,3/3,31.02,,,,,Y,N,,,,,,,
+9/19/2017,,Waller ,CS,,,0,,,1/3,37.9,,,,,Y,N,,,,,,,
+9/19/2017,,Waller ,HG (HGS),,,475,,,1/3,36.65,,,,,Y,N,,,,,,,
+9/19/2017,,Waller ,MS,,,420,,,2/3,36.76,,,,,Y,N,,,,,,,
+9/19/2017,,Waller ,PP,,,133,,,,,,,,,,,,,,,,,
+9/19/2017,,Waller ,SB,,,775,,,2/3,36.92,,,,,Y,N,,,,,,,
+9/19/2017,,Waller ,1083,,,1340,,,3/3,33.28,,,,,Y,N,,,,,,,
+9/19/2017,,Waller ,TJ,,,620,,,1/3,37.55,,,,,Y,N,,,,,,,
+9/19/2017,,Waller ,TS,,,500,,,2/3,37.23,,,,,Y,N,,,,,,,
+10/13/2017,,Waller ,MS,,,200,,,,0,,,,,Y,N,,,,,,,
+10/13/2017,,Waller ,PP,,,75,,,2/3,37.4,,,,,Y,N,,,,,,,
+10/13/2017,,Waller ,SS,,,850,,,3/3,,,,,,Y,N,,,,,,,
+10/13/2017,,Waller ,TS,,,2380,,,3/3,,,,,,Y,N,,,,,,,
+10/15/2017,,Waller ,EP,,,125,,,,0,,,,,Y,N,,,,,,,
+10/15/2017,,Waller ,FF,,,350,,,3/3,,,,,,Y,N,,,,,,,
+10/15/2017,,Waller ,HG,,,100,,,3/3,,,,,,Y,N,,,,,,,
+2/25/2025,7950,Walnut,LL,1194.8,,180,,2/26/2025,0,0,0,1,,,Y," Y, (1/8)"," Y, (1/8)",,,,,2-25-2025 UE FIB MST Walnut Creek qPCR Run 2-26-2025 -  Quantification Cq Results.xlsx,2/25/2025 Walnut Creek IDEXX Counts
+2/25/2025,24800,Walnut,MB,3921.6,,344,,2/26/2025,0,0,0,2,,,Y," Y, (1/8)"," Y, (1/8)",,,,,2-25-2025 UE FIB MST Walnut Creek qPCR Run 2-26-2025 -  Quantification Cq Results.xlsx,2/25/2025 Walnut Creek IDEXX Counts
+2/25/2025,4731,Walnut,MW,1045.2,,90.4,,2/26/2025,1,0,0,2,,,Y," Y, (1/8)"," Y, (1/8)",,,,,2-25-2025 UE FIB MST Walnut Creek qPCR Run 2-26-2025 -  Quantification Cq Results.xlsx,2/25/2025 Walnut Creek IDEXX Counts
+2/25/2025,18990,Walnut,PF,1844.4,,129.2,,2/26/2025,3,35.29,13198145,4,30.095,10739439,Y," Y, (1/8)"," Y, (1/8)",,,,,2-25-2025 UE FIB MST Walnut Creek qPCR Run 2-26-2025 -  Quantification Cq Results.xlsx,2/25/2025 Walnut Creek IDEXX Counts
+2/25/2025,13325,Walnut,QD,6931.6,,857.2,,2/26/2025,3,35.06,13092230,4,33.7825,12421676.5,Y," Y, (1/8)"," Y, (1/8)",,,,,2-25-2025 UE FIB MST Walnut Creek qPCR Run 2-26-2025 -  Quantification Cq Results.xlsx,2/25/2025 Walnut Creek IDEXX Counts
+2/25/2025,23254,Walnut,WL,3921.6,,344,,2/26/2025,0,0,0,3,,,Y," Y, (1/8)"," Y, (1/8)",,,,,2-25-2025 UE FIB MST Walnut Creek qPCR Run 2-26-2025 -  Quantification Cq Results.xlsx,2/25/2025 Walnut Creek IDEXX Counts
+3/11/2025,7950,Walnut,LL,1953.6,,87.2,,4/7/2025,0,0,0,0,,,Y,N,N,,,,,,
+3/11/2025,24800,Walnut,MB,3465.6,,182.8,,4/7/2025,0,0,0,0,,,Y,N,N,,,,,,
+3/11/2025,4731,Walnut,MW,1513.6,,204.8,,4/7/2025,2,0,0,0,,,Y,N,N,,,,,,
+3/11/2025,18990,Walnut,PF,1230.4,,39.2,,4/7/2025,0,0,0,0,,,Y,N,N,,,,,,
+3/11/2025,13325,Walnut,QD,6931.6,,336.8,,4/7/2025,4,34.4775,9556067.5,0,,,Y,N,N,,,,,,
+3/11/2025,23254,Walnut,WL,1844.4,,89.2,,4/7/2025,0,0,0,0,,,Y,N,N,,,,,,
+4/10/2025,7950,Walnut,LL,4813.2,,91.2,,4/16/2025,0,0,0,0,,,Y,N,N,,,,,,
+4/10/2025,24800,Walnut,MB,9678.4,,116.8,,4/16/2025,0,0,0,0,,,Y,N,N,,,,,,
+4/10/2025,4731,Walnut,MW,9678.4,,4184.8,,4/16/2025,0,0,0,0,,,Y,N,N,,,,,,
+4/10/2025,18990,Walnut,PF,3481.6,,123.6,,4/16/2025,2/4,0,0,0,,,Y,N,N,,,,Cq values not viable,,
+4/10/2025,13325,Walnut,QD,9678.4,,3655.6,,4/16/2025,2,0,0,2/4,,,Y,N,N,,,,Cq values not viable,,
+4/10/2025,23254,Walnut,WL,3318.8,,80.4,,4/16/2025,0,0,0,0,,,Y,N,N,,,,,,

@@ -1,217 +1,265 @@
+# ==============================================================================
+# FECAL INDICATOR BACTERIA & MICROBIAL SOURCE TRACKING (FIB-MST) PIPELINE
+# ==============================================================================
+# Purpose: Analyze fecal indicator bacteria (E. coli) concentrations and microbial source tracking (MST)
+# marker amplifications across Austin-area creeks to identify pollution sources and high-risk sites
+#
+# MST Markers:
+# - HF183: Human-associated Bacteroides marker
+# - DogBac: Dog-associated Bacteroides marker
+# High confidence detection defined as >= 3 amplifications out of 4
+#
+# Data: final_data_lexi_FIBMST_paper_2025_GOOD.csv
+# EPA Benchmark: Geometric mean of 126 cfu/100mL; single-sample max 406 cfu/100mL
+
+
+# ------------------------------------------------------------------------------
+# 1. LOAD PACKAGES
+# ------------------------------------------------------------------------------
 library(tidyverse)
+library(FSA)
 
-setwd("~/Desktop/Team Stuart Data Analysis/FIB-MST")
+# ------------------------------------------------------------------------------
+# 2. CONSTANTS
+# ------------------------------------------------------------------------------
+EPA_GM_THRESHOLD <- 126 
 
-fib_data_raw <- Copy_of_UrbEco_FIB_MST_Data_2021_Present_Good_correct_data
+# Colorblind-friendly palette used throughout
+MST_COLORS <- c(
+  "HF183"             = "#0072B2",
+  "HF183_copynumber"  = "#0072B2",
+  "DogBac"            = "#E69F00",
+  "DogBac_copynumber" = "#E69F00",
+  "Both"              = "#CC79A7",
+  "Ecoli_count"       = "#CC79A7"
+)
 
-# See column names
-names(fib_data_raw)
+CREEK_COLORS <- c(
+  "#4A4A4A", "#E69F00", "#56B4E9", "#009E73",
+  "#F0E442", "#0072B2", "#D55E00", "#CC79A7"
+)
 
-# CLEANING
-fib_data_clean <- fib_data_raw %>%
-  select(Date, # Select relevant columns
-         Creek,
-         Ecoli_count = `E. coli count (avg cfu or mpn/100mL)`,
-         HF183_amps_raw = `# of HF183 amplifications (out of 4)`,
-         DogBac_amps_raw = `# of DogBac amplifications (out of 4)`) %>% 
-  mutate(HF183_amps = as.numeric(str_replace(HF183_amps_raw, "/.*", "")), # Clean and convert amplification columns
-         DogBac_amps = recode(DogBac_amps_raw,
-                              "N/A" = NA_character_,
-                              "0/4*" = "0"),
-         DogBac_amps = as.numeric(str_replace(DogBac_amps_raw, "/.*", "")))  %>% 
-  mutate(Date = mdy(Date), 
-         Month = month(Date, label = TRUE, abbr = TRUE),
-         Season = case_when( # Create season variable
-           Month %in% c("Dec", "Jan", "Feb") ~ "Winter",
-           Month%in% c("Mar", "Apr", "May") ~ "Spring",
-           Month %in% c("Jun", "Jul", "Aug") ~ "Summer",
-           Month %in% c("Sep", "Oct", "Nov") ~ "Fall")
-         ) %>% 
-  drop_na(Ecoli_count, HF183_amps, DogBac_amps) %>% 
-  mutate(Ecoli_count = as.numeric(Ecoli_count)) %>% 
-  select(Date, Month, Season, Creek, Ecoli_count, HF183_amps, DogBac_amps)
+# ------------------------------------------------------------------------------
+# 3. LOAD AND CLEAN MAIN DATA
+# ------------------------------------------------------------------------------
+# - Trim whitespace from Creek names
+# - Remove Waller 2017 samples (unreliable)
+# - Strip "/4" denominators from amplification columns and coerce to numeric
+# - Recode "N/A" and "N" entries in amplifications/CQ columns to 0
 
-# See column names
-names(fib_data_clean)
+setwd("~/Team Stuart Data Analysis/FIB-MST")
 
-# TOTALS
-sample_total <- nrow(fib_data_clean)
+fibmst_raw <- read.csv("data/final data (lexi) - FIBMST paper 2025 - GOOD.csv")
 
-dog_total <- fib_data_clean %>% 
-  filter(DogBac_amps >= 3) %>% 
-  nrow()
+clean_fibmst_data <- fibmst_raw %>%
+  mutate(Date = mdy(Date),
+         Creek = trimws(Creek)) %>% 
+  filter(!(Creek == "Waller" & year(Date) == 2017)) %>% 
+  mutate(X..of.HF183.amplifications..out.of.4. = str_replace(X..of.HF183.amplifications..out.of.4., "/.*", ""),
+         X..of.DogBac.amplifications..out.of.4. = str_replace(X..of.DogBac.amplifications..out.of.4., "/.*", ""),
+         HF183.CQ.mean = str_replace(HF183.CQ.mean, "N/A", "0"),
+         DogBac.CQ.mean = str_replace(DogBac.CQ.mean, "N/A", "0")) %>% 
+  filter(X..of.HF183.amplifications..out.of.4. != "" & X..of.DogBac.amplifications..out.of.4. != "" &
+           E..coli.count..avg.cfu.or.mpn.100mL. != "")
 
-human_total <- fib_data_clean%>% 
-  filter(HF183_amps >= 3) %>% 
-  nrow()
+# ------------------------------------------------------------------------------
+# 4. MODEL ASSUMPTION CHECKS
+# ------------------------------------------------------------------------------
+# Verify whether standard linear regression assumptions (linearity, homoscedasticity,
+# normality) are met. If not, assess whether log-transformation resolves violations
+
+fib_model_data <- clean_fibmst_data %>% 
+  select(Creek,
+         Ecoli_count = E..coli.count..avg.cfu.or.mpn.100mL.,
+         HF183_amps = X..of.HF183.amplifications..out.of.4.,
+         DogBac_amps = X..of.DogBac.amplifications..out.of.4.) %>% 
+  filter(!is.na(as.numeric(Ecoli_count)),
+         !is.na(as.numeric(HF183_amps)),
+         !is.na(as.numeric(DogBac_amps))) %>% 
+  mutate(Ecoli_count = as.numeric(Ecoli_count),
+         HF183_amps = as.numeric(HF183_amps),
+         DogBac_amps = as.numeric(DogBac_amps),
+         log_Ecoli = log(Ecoli_count + 1))
+  
+# --- Linearity: raw E. coli vs. amplifications ---
+fib_model_data %>%
+  ggplot(aes(x = HF183_amps, y = Ecoli_count)) +
+  geom_point() +
+  labs(title = "E. coli Count vs. HF183 Amplifications (Raw)") +
+  theme_minimal()
+# Linearity not met, right-skewed
+
+fib_model_data %>% 
+  ggplot(aes(x = DogBac_amps, y = Ecoli_count)) +
+  geom_point() +
+  labs(title = "E. coli Count vs. DogBac Amplifications (Raw)") +
+  theme_minimal()
+# Linearity not met
+
+# --- Homoscedasticity and normality: raw vs. log-transformed ---
+plot(lm(Ecoli_count ~ factor(HF183_amps), data = fib_model_data))
+# Homoscedasticity not met, normality not met
+plot(lm(Ecoli_count ~ factor(DogBac_amps), data = fib_model_data))
+# Homoscedasticity not met, normality not met
+
+plot(lm(log_Ecoli ~ factor(HF183_amps), data = fib_model_data))
+plot(lm(log_Ecoli ~ factor(DogBac_amps), data = fib_model_data))
+
+# Conclusion: log(E.coli + 1) transformation is appropriate for all models
+
+# ------------------------------------------------------------------------------
+# 5. AMPLIFICATION TOTALS SUMMARY
+# ------------------------------------------------------------------------------
+# Summarize how many samples met the high-confidence threshold (>= 3 amps)
+sample_total <- nrow(fib_model_data)
+human_total <- sum(fib_model_data$HF183_amps >= 3)
+dog_total <- sum(fib_model_data$DogBac_amps >= 3)
 
 totals_df <- data.frame(
-  Category = c("Total Samples Analyzed", "Human Source (>=3 Amps)", "Dog Sources (>= Amps)"),
+  Category = c("Total Samples Analyzed", "Human Source (>=3 Amps)", "Dog Sources (>=3 Amps)"),
   Count = c(sample_total, human_total, dog_total)
 )
 
-# PLOT AMPLIFICATION TOTALS
-ggplot(totals_df, aes(x=Category, y=Count)) + 
-  geom_bar(stat = "identity", width=0.75, fill="#047857") +
-    geom_text(aes(label=Count), vjust=-0.5, size=3.5) +
+ggplot(totals_df, aes(x = Category, y = Count)) + 
+  geom_bar(stat = "identity", width = 0.75) +
+    geom_text(aes(label = Count), vjust = -0.5, size = 3.5) +
       labs(title = "Fecal Source Tracking Results: High Confidence Amplifications",
-           subtitle = "High confidence defined as 3 or more amplifications (out of 4) in the relevant dataset",
-           x = NULL,
-           y = "Count of Samples") +
+           subtitle = "High confidence defined as >=3 amplifications out of 4",
+           x = NULL, y = "Count of Samples") +
         theme_minimal(base_size = 13) +
-          theme(
-            plot.title = element_text(face = "bold"),
-            axis.text.x = element_text(angle = 15, hjust = 1)
+          theme(plot.title = element_text(face = "bold"),
+                axis.text.x = element_text(angle = 15, hjust = 1)
           )
 
-# REGRESSION MODEL OF HF183, DOGBAC, & E. COLI
-# Assumptions tests
-fib_data_clean %>% # Linearity not met
-  ggplot(aes(x = HF183_amps, y = Ecoli_count)) +
-  geom_point() +
-  labs(title = "E. coli Count vs. HF183 Amplifications",
-       x = "HF183 Amplifications (0-4)",
-       y = "E. coli Concentration (avg cfu/100mL)")
+# ------------------------------------------------------------------------------
+# 6. MULTIPLE LINEAR REGRESSION
+# ------------------------------------------------------------------------------
+# Test whether human and dog MST markers jointly predict log E. coli
+fib_mlr <- lm(log_Ecoli ~ HF183_amps + DogBac_amps + HF183_amps*DogBac_amps, data = fib_model_data) 
+summary(fib_mlr)
+# Only HF183 is a significant predictor of log E. coli, DogBac and the interaction term aren't
 
-fib_data_clean %>% # Linearity not met
-  ggplot(aes(x = DogBac_amps, y = Ecoli_count)) +
-  geom_point() +
-  labs(title = "E. coli Count vs. DogBac Amplifications",
-       x = "DogBac Amplifications (0-4)",
-       y = "E. coli Concentration (avg cfu/100mL)")
+# ------------------------------------------------------------------------------
+# 7. ONE-WAY ANOVA
+# ------------------------------------------------------------------------------
+# Treats HF183 amplification count as a categorical grouping variable to test whether mean log E. coli
+# differs across amplification levels
+human_anova <- aov(lm(log_Ecoli~ factor(HF183_amps), data = fib_model_data))
+summary(human_anova) 
+# There's a significant difference in means across groups
 
-plot(lm(Ecoli_count ~ factor(HF183_amps), data = fib_data_clean)) # Homoscedasticity not met (better at predicting low E. coli concentrations), normality not met
-plot(lm(Ecoli_count ~ factor(DogBac_amps), data = fib_data_clean)) # Homoscedasticity not met, normality not met
-# Standard linear regression not appropriate, GLM or ANOVA better
+# --- Tukey's HSD post-hoc ---
+# To see which groups differ
+TukeyHSD(human_anova)
+# Groups 2 vs. 0 and 4 vs. 0 are significantly different
 
-# E.coli data has to be transformed to compress extreme values
-fib_data_clean$log_Ecoli_count <- log(fib_data_clean$Ecoli_count + 1) 
-
-plot(lm(log_Ecoli_count ~ factor(HF183_amps), data = fib_data_clean)) # Variance mostly good, few outliers still, assumptions met
-plot(lm(log_Ecoli_count ~ factor(DogBac_amps), data = fib_data_clean)) # Few outliers but assumptions met
-
-# MODEL & PLOTS
-# Multiple Linear Regression with Interaction
-fib_glm_log <- fib_data_clean %>% 
-  lm(log_Ecoli_count ~ HF183_amps + DogBac_amps + HF183_amps*DogBac_amps, data = .) 
-summary(fib_glm_log)
-# Only Human FIB is a significant predictor of E. coli concentrations
-
-# One-way ANOVA through Linear Model 
-human_anv_log <- aov(lm(log_Ecoli_count ~ factor(HF183_amps), data = fib_data_clean))
-summary(human_anv_log) 
-# There's a difference in means in the groups
-
-# Tukey's HSD to see which amplification groups are different from each other
-human_tukey_test <- TukeyHSD(human_anv_log)
-# 2-0 and 4-0 are significantly dif.
-
-# Boxplot of transformed E. coli data by HF183 Amplifications
-human_graph_log <- fib_data_clean %>% 
-  ggplot(aes(x = factor(HF183_amps), y = log_Ecoli_count)) +
-  geom_boxplot(fill = "steelblue", alpha = 0.8) +
-  labs(title = "Log E. coli Concentrations by HF183 Amplification",
-       subtitle = "Analysis on log(E.coli + 1) transformed, unfiltered data",
-       x = "Number of Amplifications (HF183)",
-       y = "Log(E. coli Concentrations + 1)") +
+# --- Boxplot: log E. coli by HF183 amplification group ---
+fib_model_data %>% 
+  ggplot(aes(x = factor(HF183_amps), y = log_Ecoli)) +
+  geom_boxplot(alpha = 0.8) +
+  geom_jitter(alpha = 0.5) + 
+  labs(title = "Log E. coli Concentrations by HF183 Amplification Group",
+       subtitle = "Analysis on log(E.coli + 1) transformed data",
+       x = "Number of Amplifications (0-4)",
+       y = "Log(E. coli + 1) (cfu/100mL)") +
   theme_minimal()
   
-human_graph_log
-# Jump from 1 to 2 amplifications, but not much change after that
+# ------------------------------------------------------------------------------
+# 8. HELPER FUNCTION: CREEK PROFILE PLOT
+# ------------------------------------------------------------------------------
+# All per-creek plots follow an identical structure. This function eliminates the repetition:
+# filter to one creek and date, pivot to long format, compute a dual-axis scale factor, and plot
+make_creek_profile <- function(data, creek_name, sample_date, title) {
+  
+  creek_long <- data %>%
+    filter(Creek == creek_name, Date == as.Date(sample_date)) %>%
+    select(Distance_frommouth, Ecoli_count, HF183_copynumber, DogBac_copynumber) %>%
+    pivot_longer(cols      = -Distance_frommouth,
+                 names_to  = "Type",
+                 values_to = "Value") %>%
+    arrange(desc(Distance_frommouth))
+  
+  max_ecoli    <- max(creek_long$Value[creek_long$Type == "Ecoli_count"], na.rm = TRUE)
+  max_mst      <- max(creek_long$Value[creek_long$Type %in%
+                                         c("HF183_copynumber", "DogBac_copynumber")], na.rm = TRUE)
+  scale_factor <- max_mst / max_ecoli
+  
+  creek_long <- creek_long %>%
+    mutate(
+      Value_scaled = ifelse(Type == "Ecoli_count", Value * scale_factor, Value),
+      Type = factor(Type, levels = c("HF183_copynumber", "DogBac_copynumber", "Ecoli_count"))
+    )
+  
+  ggplot(creek_long, aes(as.factor(Distance_frommouth), Value_scaled, fill = Type)) +
+    geom_col(position = position_dodge(width = 0.7), width = 0.7) +
+    scale_y_continuous(
+      name     = "MST (Copy Number/100mL)",
+      sec.axis = sec_axis(~ . / scale_factor, name = "FIB (MPN/100mL)")
+    ) +
+    scale_fill_manual(
+      values = MST_COLORS[c("HF183_copynumber", "DogBac_copynumber", "Ecoli_count")],
+      labels = c("HF183_copynumber"  = "HF-183",
+                 "DogBac_copynumber" = "DogBac",
+                 "Ecoli_count"       = "FIB")
+    ) +
+    labs(title = title,
+         x     = "Distance from Mouth of Creek (m)") +
+    theme_minimal() +
+    theme(plot.title         = element_text(face = "bold", hjust = 0.5),
+          legend.position    = "bottom",
+          legend.title       = element_blank(),
+          panel.grid.major.x = element_blank(),
+          panel.grid.minor.x = element_blank())
+}
 
-# Non-parametric test - Kruskal-Wallis Rank Sum Test
-kruskal.test(log_Ecoli_count ~ factor(HF183_amps), data = fib_data_clean)
-# There are significant differences in log E.coli counts between the amplification groups
+# ------------------------------------------------------------------------------
+# 9. PIE CHART: FECAL SOURCE TYPE AMONG POSITIVE SAMPLES
+# ------------------------------------------------------------------------------
+# A sample is considered positive if it meets BOTH criteria:
+#   1. >= 3 amplifications out of 4
+#   2. CQ mean < 36.9
 
-# Non-parametric - Dunn's Test to see which amplification groups are different from each other
-install.packages("FSA")
-library(FSA)
+piechart_data <- clean_fibmst_data %>%
+  select(X..of.HF183.amplifications..out.of.4., HF183.CQ.mean,
+         X..of.DogBac.amplifications..out.of.4., DogBac.CQ.mean) %>%
+  rename(HF183_amps  = X..of.HF183.amplifications..out.of.4.,
+         DogBac_amps = X..of.DogBac.amplifications..out.of.4.) %>%
+  mutate(HF183_amps  = as.numeric(HF183_amps),
+         DogBac_amps = as.numeric(DogBac_amps)) %>% 
+  filter(HF183_amps >= 3 | DogBac_amps >= 3,
+         HF183.CQ.mean < 36.9, DogBac.CQ.mean < 36.9,
+         HF183.CQ.mean != "", DogBac.CQ.mean != "") %>% 
+  drop_na(HF183_amps, DogBac_amps)
 
-dunnTest(log_Ecoli_count ~ factor(HF183_amps), data = fib_data_clean, method = "bonferroni")
-# 0-2 and 0-4 are significantly dif.
+n_positive <- nrow(piechart_data)
 
+piechart_df <- data.frame(
+  Type = c("HF-183", "DogBac", "Both"),
+  Perc = c(
+    mean(piechart_data$HF183_amps >= 3 & piechart_data$DogBac_amps == 0),
+    mean(piechart_data$DogBac_amps == 0 & piechart_data$HF183_amps >= 3),
+    mean(piechart_data$DogBac_amps >= 3 & piechart_data$HF183_amps >= 3)
+  )
+) %>%
+  arrange(Perc) %>%
+  mutate(Amps = scales::percent(Perc))
 
-
-# BAR GRAPH OF AVERAGE E.COLI COUNT BY CREEK 
-# Locations with chronically high FIB lvls & chronically low FIB lvls
-# EPA recommendation - Geometric mean (GM) of 126 cfu/100mL, shouldn't be more than 406 cfu/100mL in any 1 sample
-
-# Average FIB lvls
-shoal_avg <- relevant_data %>% 
-  filter(Creek == "Shoal")  %>% 
-  summarize(geo_mean = exp(mean(log(`E. coli count (avg cfu or mpn/100mL)`)))) %>% 
-  pull(geo_mean) %>% 
-  print() # 260.80 cfu/100mL
-
-boggy_avg <- relevant_data %>% 
-  filter(Creek == "Boggy", `E. coli count (avg cfu or mpn/100mL)` > 0)  %>% 
-  summarize(geo_mean = exp(mean(log(`E. coli count (avg cfu or mpn/100mL)`)))) %>% 
-  pull(geo_mean) %>% 
-  print() # 260.25 cfu/100mL
-
-tannehill_avg <- relevant_data %>% 
-  filter(Creek == "Tannehill")  %>% 
-  summarize(geo_mean = exp(mean(log(`E. coli count (avg cfu or mpn/100mL)`)))) %>% 
-  pull(geo_mean) %>% 
-  print() # 329.35 cfu/100mL
-
-blunn_avg <- relevant_data %>% 
-  filter(Creek == "Blunn")  %>% 
-  summarize(geo_mean = exp(mean(log(`E. coli count (avg cfu or mpn/100mL)`)))) %>% 
-  pull(geo_mean) %>% 
-  print() # 313.49 cfu/100mL
-
-# Chronically high FIB lvls - consistently had >406 cfu/100mL in any single sample
-waller_avg <- relevant_data %>% 
-  filter(Creek == "Waller", `E. coli count (avg cfu or mpn/100mL)` > 0)  %>% 
-  summarize(geo_mean = exp(mean(log(`E. coli count (avg cfu or mpn/100mL)`)))) %>% 
-  pull(geo_mean) %>% 
-  print() # 1148.33 cfu/100mL
-
-# Chronically low FIB lvls - consistently had <406 cfu/100mL in any single sample
-onion_avg <- relevant_data %>% 
-  filter(Creek == "Onion")  %>% 
-  summarize(geo_mean = exp(mean(log(`E. coli count (avg cfu or mpn/100mL)`)))) %>% 
-  pull(geo_mean) %>% 
-  print() # 27.00 cfu/100mL
-
-bull_avg <- relevant_data %>% 
-  filter(Creek == "Bull", `E. coli count (avg cfu or mpn/100mL)` > 0)  %>% 
-  summarize(geo_mean = exp(mean(log(`E. coli count (avg cfu or mpn/100mL)`)))) %>% 
-  pull(geo_mean) %>% 
-  print() # 26.38 cfu/100 mL
-
-creek_avg_df <- data.frame(
-  Creek = c("Shoal", "Boggy", "Tannehill", "Blunn", "Waller", "Onion", "Bull"),
-  Ecoli_avg = c(shoal_avg, boggy_avg, tannehill_avg, blunn_avg, waller_avg, onion_avg, bull_avg)
-)
-print(creek_avg_df)
-
-# Graph of avg. E.coli counts of creeks
-creek_avg_df %>% 
-  ggplot( aes(x = Creek, y = Ecoli_avg, fill = Creek)) +
-  geom_bar(stat = "identity") +
-  geom_hline(yintercept = 126, color = "black", linetype = "solid", size = 0.5) +
-  annotate("text", x = 3.5, y = 145, label = "EPA recommendation - 126 cfu/100mL", color = "black", size = 4) +
-  annotate("text", x = 3.5, y = 45, label = "Chronically low FIB lvls.", color = "black", size = 3) +
-  annotate("text", x = 7, y = 1170, label = "Chronically high FIB lvls.", color = "black", size = 3) +
-  scale_fill_brewer(palette = "Set2") +
-  labs(title = expression("Average " * italic("E.coli") * " Count by Creek"),
-       subtitle = "Compared to EPA guidelines",
-       x = "Creek",
-       y = expression("Geometric Mean of " * italic("E.coli") * " Count (cfu/100mL)")) +
-  theme_minimal()
-
-relevant_data %>% 
-  ggplot(aes(x = Creek, y = `E. coli count (avg cfu or mpn/100mL)`, fill = Creek)) +
-  geom_boxplot() +
-  labs(title = expression("Average " * italic("E.coli") * " Count by Creek"),
-       x = "Creek",
-       y = expression("Geometric Mean of " * italic("E.coli") * " Count (cfu/100mL)")) +
-  theme_minimal()
-
-
-
-
+ggplot(piechart_df, aes("", Perc, fill = Type)) +
+  geom_bar(stat = "identity", width = 1, color = "white") +
+  coord_polar("y", start = 0) +
+  geom_text(aes(label = paste(Type, "=", Amps)),
+            position    = position_stack(vjust = 0.5),
+            show.legend = FALSE, size = 4.5) +
+  scale_fill_manual(
+    values = c("HF-183" = "#0072B2", "DogBac" = "#E69F00", "Both" = "#CC79A7"),
+    labels = c("HF-183" = "Only HF-183 Amplification",
+               "DogBac" = "Only DogBac Amplification",
+               "Both"   = "Both HF-183 and DogBac")
+  ) +
+  labs(title = paste0("Distribution of Source Types Among Positive Samples (n=", n_positive, ")")) +
+  theme_void() +
+  theme(plot.title      = element_text(size = 15, face = "bold", hjust = 0.5),
+        legend.title    = element_blank(),
+        legend.position = "bottom")
 
 
